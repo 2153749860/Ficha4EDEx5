@@ -5,17 +5,15 @@
  */
 package ficha4ex5;
 
+
 /**
  *
  * @author tiago
  */
-public class FIcha4Ex5 {
+public class EmptyCollectionException2 extends Exception{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public EmptyCollectionException2(String message) {
+        super(message);
     }
     
 }
