@@ -35,35 +35,35 @@ public class LinkedQueue<T> implements QueueADT<T> {
     }
 
     @Override
-    public T dequeue() throws EmptyCollectionException2{
+    public T dequeue() throws EmptyCollectionException2 {
         if (this.isEmpty()) {
             throw new EmptyCollectionException2("Lista Vazia!");
-        } else {
-            LinearNode<T> current = new LinearNode<>();
-            current = this.front;
-            this.front = this.front.getNext();
-            current.setNext(null);
-            this.count--;
-            return current.getElement();
         }
+        LinearNode<T> current = new LinearNode<>();
+        current = this.front;
+        this.front = this.front.getNext();
+        current.setNext(null);
+        this.count--;
+        return current.getElement();
+
     }
 
     @Override
-    public T first() throws EmptyCollectionException2{
-        if(this.isEmpty()){
+    public T first() throws EmptyCollectionException2 {
+        if (this.isEmpty()) {
             throw new EmptyCollectionException2("Lista Vazia!");
-        } else{
-            return this.front.getElement();
         }
+        return this.front.getElement();
+
     }
 
     @Override
     public boolean isEmpty() {
-        if(this.count == 0){
+        if (this.count == 0) {
             return true;
-        } else{
-            return false;
         }
+        return false;
+
     }
 
     @Override
@@ -73,10 +73,10 @@ public class LinkedQueue<T> implements QueueADT<T> {
 
     @Override
     public String toString() {
-        if(this.isEmpty()){
+        if (this.isEmpty()) {
             return "Lista Vazia";
-        } else{
-            LinearNode<T> current = this.front;
+        }
+        LinearNode<T> current = this.front;
         StringBuilder str = new StringBuilder();
         str.append("Front: ");
         str.append(this.front.getElement());
@@ -94,8 +94,7 @@ public class LinkedQueue<T> implements QueueADT<T> {
             current = current.getNext();
         }
         return str.toString();
-        }
-    
+
     }
 
 }
